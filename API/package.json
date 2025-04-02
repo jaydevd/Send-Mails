@@ -1,0 +1,20 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jaydev Dwivedi",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "csv-writer": "^1.6.0",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "hbs": "^4.2.0",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.10.0",
+    "sequelize": "^6.37.7"
+  }
+}
