@@ -2,6 +2,7 @@
   "name": "api",
   "version": "1.0.0",
   "main": "app.js",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,9 +13,14 @@
     "csv-writer": "^1.6.0",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
+    "express-handlebars": "^5.3.5",
     "hbs": "^4.2.0",
     "node-cron": "^3.0.3",
     "nodemailer": "^6.10.0",
+    "nodemailer-express-handlebars": "^7.0.0",
+    "path": "^0.12.7",
+    "pg": "^8.14.1",
+    "pg-hstore": "^2.3.4",
     "sequelize": "^6.37.7"
   }
 }
