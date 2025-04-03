@@ -8,7 +8,7 @@
 
 const { default: hbs } = require('nodemailer-express-handlebars');
 const nodemailer = require('nodemailer');
-const { HTTP_STATUS_CODES } = require('./Config/constants');
+const { HTTP_STATUS_CODES } = require('./config/constants');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const cron = require('node-cron');
