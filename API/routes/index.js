@@ -8,8 +8,9 @@
 
 const express = require('express');
 const router = express.Router();
-const { GetHome, SendMail } = require('../sendEmail');
+const { SendMail } = require('./../controllers/MailController');
 
-router.get('/', SendMail);
+router.route('/send-mail')
+    .get(SendMail);
 
-module.exports = router;
+module.exports = { router };
