@@ -7,43 +7,29 @@
  */
 
 const nodemailer = require('nodemailer');
-const hbs = require('nodemailer-express-handlebars');
 const { HTTP_STATUS_CODES } = require('./../config/constants');
-const path = require('path');
-const cron = require('node-cron');
-const { mailOptions } = require('./../config/mailOptions');
 const { startCronJobs } = require('./../cron');
 
 const SendMail = async () => {
     try {
 
-        const transporter = nodemailer.createTransport({
-            service: 'Gmail',
-            auth: {
-                user: 'jaydevdwd@gmail.com',
-                pass: process.env.EMAIL_PASSWORD,
-            },
-        });
+        startCronJobs(transporter);
 
-        const handlebarOptions = {
-            viewEngine: {
-                extname: '.hbs',
-                partialsDir: path.resolve('./templates/partials'),
-                layoutsDir: path.resolve('./templates'),
-                defaultLayout: false,
-            },
-            viewPath: path.resolve('./templates'),
-            extName: '.hbs',
-        };
-
-        transporter.use('compile', hbs(handlebarOptions));
-
-        startCronJobs();
-
-        return;
+        return res.status(200).json({
+            status: HTTP_STATUS_CODES.SUCCESS,
+            message: 'Mail sent successfully',
+            data: '',
+            error: ''
+        })
 
     } catch (error) {
         console.log(error);
+        return res.status(500).json({
+            status: HTTP_STATUS_CODES.INTERNAL_SERVER_ERROR,
+            message: 'Internal Server Error',
+            data: '',
+            error: error.message
+        })
     }
 }
 

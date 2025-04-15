@@ -1,7 +1,7 @@
 const mailJob = require('./mailJob');
 
-const startCronJobs = () => {
-    mailJob.start();
+const startCronJobs = (transporter) => {
+    mailJob.start(transporter);
 };
 
 module.exports = { startCronJobs };

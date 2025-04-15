@@ -1,5 +1,7 @@
-const mailService = () => {
+const { mailOptions } = require("../config/mailOptions");
+const transporter = require("../config/transporter");
 
+const mailService = () => {
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.log('Error:', error);
